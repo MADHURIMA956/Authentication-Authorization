@@ -1,5 +1,5 @@
-module.exports = function (permittedRoles) {
-  return function (req, res, next) {
+module.exports = function (permittedRoles) { //wrapping function 
+  return function (req, res, next) {  //return middleware
     // first get the user from the req
     user = req.user.user;
 
@@ -22,3 +22,9 @@ module.exports = function (permittedRoles) {
     next();
   };
 };
+
+
+
+//wrapping function :-> passing data to ur middleware u have to have a wrapping function , this wrapping funvction get the data and then this returns ur middleware.
+
+// when u have the data to pass in the middleware u might be need wrapping function.
